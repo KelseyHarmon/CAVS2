@@ -12,3 +12,12 @@ function loadComponent(id, file) {
 loadComponent('nav-container', 'components/navigation.html');
 loadComponent('header-container', 'components/header.html');
 loadComponent('footer-container', 'components/footer.html');
+
+// Activate the overlay
+function on() {
+    document.getElementById("shutdown-overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("shutdown-overlay").style.display = "none";
+} 

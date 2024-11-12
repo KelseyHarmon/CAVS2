@@ -24,6 +24,18 @@
     <!-- Load Footer -->
     <div id="footer-container"></div>
 
+    <button onclick="on()">Shutdown Menu Test</button>
+
+    <!-- Shutdown Menu -->
+     <div id="shutdown-overlay">
+        <h4 class="overlay-heading">Vehicle Paused</h4>
+        <div id="shutdown-msg">
+            Warning you are about to shutdown (vehicle name). Do you wish to continue?
+        </div>
+        <button onclick="off()" class="cancel-button">Cancel</button>
+        <button class="shutdown-button">Shut down</button>
+     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
