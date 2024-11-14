@@ -24,23 +24,58 @@
     <!-- Load Footer -->
     <div id="footer-container"></div>
 
-    <button onclick="on('shutdown')">Shutdown Menu Test</button>
+    <h3>Overlay Window Tests</h3>
+    <button onclick="overlayOn('shutdown')">Shut down</button>
+    <button onclick="overlayOn('data')">Add Data</button>
+    <button onclick="overlayOn('vehicle')">Add Vehicle</button>
 
     <!-- Shutdown Menu -->
      <div id="shutdown-overlay" class="overlay">
         <p class="overlay-heading">Vehicle Paused</p>
         <p class="shutdown-msg"> <b>Warning!</b> You are about to shutdown (vehicle name).</p>
+        
         <br><br><br>
         <p class="shutdown-msg">Do you wish to continue?</p>
-        <button onclick="off('shutdown')" class="overlay-button" id="cancel-button">Cancel</button>
+        
+        <button onclick="overlayOff('shutdown')" class="overlay-button" id="cancel-button">Cancel</button>
         <button class="overlay-button" id="shutdown-button">Shut down</button>
      </div>
 
      <!-- Add Data Menu -->
+      <div id="add-data-overlay" class="overlay">
+        <p class="overlay-heading">Select Data To Add</p>
+
+        <button onclick="overlayOff('data')" class="overlay-button" id="cancel-button">Cancel</button>
+        <button class="overlay-button" id="confirm-data">Confirm</button>
+
+      </div>
 
      <!-- New Vehicle Menu -->
+      <div id="add-vehicle-overlay" class="overlay">
+        <p class="overlay-heading">Configure New Vehicle</p>
 
-     <!-- Console Menu -->
+        <form action="" id="vehicle-form">
+            <label for="vehicle-name">Vehicle Name</label>
+            <br>
+            <input type="text" name="vehicle-name" id="vehicle-name">
+            <br>
+
+            <label for="config-info-1">Configuration Information</label>
+            <br>
+            <input type="text" name="config-info-1" id="config-info-1">
+            <br>
+
+            <label for="config-info-2">Configuration Information</label>
+            <br>
+            <input type="text" name="config-info-2" id="config-info-2">
+        </form>
+
+        <button onclick="overlayOff('vehicle')" class="overlay-button" id="cancel-button">Cancel</button>
+        <button class="overlay-button" id="confirm-vehicle">Confirm</button>
+        
+      </div>
+
+     <!-- Console Menu (may not get implimented this way)-->
 
     <script src="script.js"></script>
 </body>

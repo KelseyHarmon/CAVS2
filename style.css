@@ -1,15 +1,16 @@
+/* Overlay Styling */
+
 .overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
-    width: 850px; /* Full width (cover the whole page) */
-    height: 470px; /* Full height (cover the whole page) */
+    width: 850px;
+    height: 470px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #EDEDED; /* Black background with opacity */
+    background-color: #EDEDED;
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
     margin: auto;
     border-radius: 15px;
 }
@@ -35,17 +36,17 @@
     width: 170px;
     height: 81px;
     color: white;
-}
-
-
-#cancel-button {
-    background-color: #898989;   
+    background-color: #898989; 
 }
 
 #shutdown-button {
     background-color: #BC3F3F;
     right: 0;
     font-size: 24px;
+}
+
+#confirm-data, #confirm-vehicle {
+    right: 0;
 }
 
 .shutdown-msg {

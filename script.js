@@ -14,27 +14,35 @@ loadComponent('header-container', 'components/header.html');
 loadComponent('footer-container', 'components/footer.html');
 
 // Activate the overlay
-function on(menu_name) {
+function overlayOn(menu_name) {
     switch (menu_name) {
         case "shutdown":
             document.getElementById("shutdown-overlay").style.display = "block";
             break;
-    
+        case "data":
+            document.getElementById("add-data-overlay").style.display = "block";
+            break;
+        case "vehicle":
+            document.getElementById("add-vehicle-overlay").style.display = "block";
+            break;
         default:
             break;
     }
-
-    
 }
 
-function off(menu_name) {
+// Deactivate the overlay
+function overlayOff(menu_name) {
     switch (menu_name) {
         case "shutdown":
             document.getElementById("shutdown-overlay").style.display = "none";
             break;
-    
+        case "data":
+            document.getElementById("add-data-overlay").style.display = "none";
+            break;
+        case "vehicle":
+        document.getElementById("add-vehicle-overlay").style.display = "none";
+        break;
         default:
             break;
     }
-    
 } 
