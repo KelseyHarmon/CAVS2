@@ -1,36 +1,61 @@
 #shutdown-overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
-    width: 50%; /* Full width (cover the whole page) */
-    height: 50%; /* Full height (cover the whole page) */
+    width: 850px; /* Full width (cover the whole page) */
+    height: 470px; /* Full height (cover the whole page) */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    background-color: #EDEDED; /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
     margin: auto;
+    border-radius: 15px;
 }
 
-#shutdown-msg {
-    position: block;
-    font-size: 40px;
-    color: white;
+.shutdown-msg {
+    font-size: 32px;
+    color: #5B514D;
     padding: 18px;
     margin: 4px;
+    
 }
 
 .overlay-heading {
     color: white;
-    font-size: 64px;
-    padding: 2px;
-    margin: 2px;
-    background-color: rgba(0, 0, 0, 1);
+    font-size: 40px;
+    margin: 0px;
+    background-color: #898989;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    height: 91px;
 }
 
-#shutdown-overlay > button {
+.cancel-button {
+    position: absolute;
     padding: 8px;
-    font-size: 16px;
+    font-size: 36px;
     margin: 8px;
+    bottom: 16px;
+    border-radius: 15px;
+    width: 170px;
+    height: 81px;
+    background-color: #898989;
+    color: white;
+}
+
+.shutdown-button {
+    position: absolute;
+    padding: 8px;
+    font-size: 24px;
+    margin: 8px;
+    bottom: 16jpx;
+    right: 0;
+    border-radius: 15px;
+    width: 170px;
+    height: 81px;
+    background-color: #BC3F3F;
+    color: white;
 }
