@@ -24,17 +24,23 @@
     <!-- Load Footer -->
     <div id="footer-container"></div>
 
-    <button onclick="on()">Shutdown Menu Test</button>
+    <button onclick="on('shutdown')">Shutdown Menu Test</button>
 
     <!-- Shutdown Menu -->
-     <div id="shutdown-overlay">
+     <div id="shutdown-overlay" class="overlay">
         <p class="overlay-heading">Vehicle Paused</p>
         <p class="shutdown-msg"> <b>Warning!</b> You are about to shutdown (vehicle name).</p>
         <br><br><br>
         <p class="shutdown-msg">Do you wish to continue?</p>
-        <button onclick="off()" class="cancel-button">Cancel</button>
-        <button class="shutdown-button">Shut down</button>
+        <button onclick="off('shutdown')" class="overlay-button" id="cancel-button">Cancel</button>
+        <button class="overlay-button" id="shutdown-button">Shut down</button>
      </div>
+
+     <!-- Add Data Menu -->
+
+     <!-- New Vehicle Menu -->
+
+     <!-- Console Menu -->
 
     <script src="script.js"></script>
 </body>

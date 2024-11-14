@@ -1,4 +1,4 @@
-#shutdown-overlay {
+.overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 850px; /* Full width (cover the whole page) */
@@ -14,14 +14,6 @@
     border-radius: 15px;
 }
 
-.shutdown-msg {
-    font-size: 32px;
-    color: #5B514D;
-    padding: 18px;
-    margin: 4px;
-    
-}
-
 .overlay-heading {
     color: white;
     font-size: 40px;
@@ -33,7 +25,7 @@
     height: 91px;
 }
 
-.cancel-button {
+.overlay-button {
     position: absolute;
     padding: 8px;
     font-size: 36px;
@@ -42,20 +34,23 @@
     border-radius: 15px;
     width: 170px;
     height: 81px;
-    background-color: #898989;
     color: white;
 }
 
-.shutdown-button {
-    position: absolute;
-    padding: 8px;
-    font-size: 24px;
-    margin: 8px;
-    bottom: 16jpx;
-    right: 0;
-    border-radius: 15px;
-    width: 170px;
-    height: 81px;
+
+#cancel-button {
+    background-color: #898989;   
+}
+
+#shutdown-button {
     background-color: #BC3F3F;
-    color: white;
+    right: 0;
+    font-size: 24px;
+}
+
+.shutdown-msg {
+    font-size: 32px;
+    color: #5B514D;
+    padding: 18px;
+    margin: 4px;
 }

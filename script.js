@@ -14,10 +14,27 @@ loadComponent('header-container', 'components/header.html');
 loadComponent('footer-container', 'components/footer.html');
 
 // Activate the overlay
-function on() {
-    document.getElementById("shutdown-overlay").style.display = "block";
+function on(menu_name) {
+    switch (menu_name) {
+        case "shutdown":
+            document.getElementById("shutdown-overlay").style.display = "block";
+            break;
+    
+        default:
+            break;
+    }
+
+    
 }
 
-function off() {
-    document.getElementById("shutdown-overlay").style.display = "none";
+function off(menu_name) {
+    switch (menu_name) {
+        case "shutdown":
+            document.getElementById("shutdown-overlay").style.display = "none";
+            break;
+    
+        default:
+            break;
+    }
+    
 } 
