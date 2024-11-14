@@ -40,6 +40,24 @@
     background-color: #898989; 
 }
 
+.overlay-button:hover {
+    background-color: #767575;
+}
+
+#shutdown-button {
+    background-color: #BC3F3F;
+    right: 0;
+    font-size: 24px;
+}
+
+#shutdown-button:hover {
+    background-color: #923030;
+}
+
+#confirm-data, #confirm-vehicle {
+    right: 0;
+}
+
 form {
     margin: 0;
     position: absolute;
@@ -48,17 +66,8 @@ form {
     width: 100%;
 }
 
-
 /* Shutdown Overlay Styling */
-#shutdown-button {
-    background-color: #BC3F3F;
-    right: 0;
-    font-size: 24px;
-}
 
-#confirm-data, #confirm-vehicle {
-    right: 0;
-}
 
 .shutdown-msg {
     font-size: 32px;
@@ -85,7 +94,7 @@ label {
 input[type=checkbox] {
     width: 24px;
     height: 24px;
-    margin-right: 0px;
+    margin-bottom: 10px;
 }
 
 
