@@ -13,9 +13,11 @@ function loadComponent(id, file) {
 }
 
 // Load each component
-loadComponent('nav-container', 'components/navigation.html');
-loadComponent('header-container', 'components/header.html');
-loadComponent('footer-container', 'components/footer.html');
+loadComponent('header', 'components/header.html');
+loadComponent('footer', 'components/footer.html');
+loadComponent('shutdown_menu', 'components/overlays/shutdown_menu.html');
+loadComponent('new_vehicle_menu', 'components/overlays/new_vehicle_menu.html');
+loadComponent('add_data_menu', 'components/overlays/add_data_menu.html');
 
 
 

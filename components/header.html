@@ -1,4 +1,24 @@
 <!-- components/header.html -->
-<header>
-    <h1>Welcome to Our Website</h1>
+<header class="header">
+
+  <div class="header-left">
+    <div class="profile-container">
+      <img src="assets/images/user.png" alt="Profile Icon" class="profile-icon">
+    </div>
+    <h3>CAVS Remote Vehicle Monitoring</h3>
+  </div>
+
+  <div class="menu-dropdown">
+    <div class="menu-icon-container" onclick="menuAnimation(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+    <div id="menuDropdown" class="menu-dropdown-content">
+      <a href="#">Home</a>
+      <a href="#">Vehicles</a>
+      <a href="#">Data View</a>
+    </div>
+  </div>
+
 </header>

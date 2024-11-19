@@ -1,9 +1,0 @@
-To locally host website
-    - have the repository cloned on your machine
-    - have python installed
-    - run "py -m http.server 8000" in the terminal from the cloned repository folder
-    - navigate to "http://localhost:8000" on your web browser
-    - make changes to the repository, then refresh browser without closing or refreshing terminal
-
-
-*I am not sure how this will work once we start integrating with ROS*
