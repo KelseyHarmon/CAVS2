@@ -238,3 +238,31 @@ input[type=checkbox] {
 .menu-dropdown-content a:hover {background-color: #ddd}
 
 .show {display: block;}
+
+
+
+
+/* ***************** */
+/* Home Page Styling */
+/* ***************** */
+.main-body {
+    display: flex;
+    height: calc(100vh - 60px); /* Full screen height minus header height */
+    overflow: hidden;
+}
+
+.data-section {
+    flex: 2;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.map-section {
+    flex: 5;
+    /* temporary static image set as background image */
+    background-image: url(assets/images/map.png); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
