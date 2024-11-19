@@ -150,18 +150,23 @@ input[type=checkbox] {
 .header-left {
     display: flex;
     align-items: center;
+    padding-left: 10px;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 /* Profile Icon Styling */
 .profile-container {
     display: flex;
     align-items: center;
-    margin-right: 20px;
-    padding-left: 10px;
 }
 .profile-icon {
     width: 30px;
     height: 30px;
+    /* cursor: pointer; */
 }
 
 
