@@ -271,3 +271,43 @@ input[type=checkbox] {
     background-repeat: no-repeat;
 }
 
+
+/* ****************************** */
+/* Vehicle Control Button Styling */
+/* ****************************** */
+
+.vehicle-control-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.control-button {
+    background-color: #898989;
+    border: 1px solid #898989;
+    border-radius: 12px;
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 60px;
+    height: 50px;
+}
+
+.control-button:last-child {
+    flex: 3;
+    height: 50px;
+}
+
+.control-button:hover {
+    background-color: #656565;
+}
+
+.control-button-icon {
+    height: 35px;
+}
