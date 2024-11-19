@@ -20,7 +20,7 @@ loadComponent('footer-container', 'components/footer.html');
 
 
 // *********************************
-// ***** Navbar  Functionality *****
+// ***** Overlay Functionality *****
 // *********************************
 
 // Activate the overlay
@@ -56,6 +56,12 @@ function overlayOff(menu_name) {
             break;
     }
 } 
+
+
+
+// *********************************
+// ***** Navbar  Functionality *****
+// *********************************
 
 // Navbar Menu Icon Animation and Toggle
 function menuAnimation(container) {
