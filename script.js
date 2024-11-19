@@ -1,3 +1,7 @@
+// *********************************
+// ****** Loading  Components ******
+// *********************************
+
 // Function to load HTML component files
 function loadComponent(id, file) {
     fetch(file)
@@ -12,6 +16,12 @@ function loadComponent(id, file) {
 loadComponent('nav-container', 'components/navigation.html');
 loadComponent('header-container', 'components/header.html');
 loadComponent('footer-container', 'components/footer.html');
+
+
+
+// *********************************
+// ***** Navbar  Functionality *****
+// *********************************
 
 // Activate the overlay
 function overlayOn(menu_name) {
@@ -46,3 +56,24 @@ function overlayOff(menu_name) {
             break;
     }
 } 
+
+// Navbar Menu Icon Animation and Toggle
+function menuAnimation(container) {
+    container.classList.toggle("change");
+    document.getElementById("menuDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+    if (!event.target.closest('.menu-icon-container')) {
+        var dropdowns = document.getElementsByClassName("menu-dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+                document.querySelector(".menu-icon-container").classList.remove("change");
+            }
+        }
+    }
+}
+
