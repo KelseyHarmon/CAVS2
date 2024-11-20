@@ -95,13 +95,10 @@ function togglePlayPause() {
     icon.style.opacity = 0; // Start fade-out
 
     setTimeout(() => {
-        // Swap icon once fade-out completes
         if (icon.src.includes('play.png')) {
             icon.src = 'assets/images/pause.png';
-            icon.alt = 'Pause Icon';
         } else {
             icon.src = 'assets/images/play.png';
-            icon.alt = 'Play Icon';
         }
         icon.style.opacity = 1; // Fade in the new icon
     }, 200); // Duration matches the CSS transition
