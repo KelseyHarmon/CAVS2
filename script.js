@@ -103,3 +103,61 @@ function togglePlayPause() {
         icon.style.opacity = 1; // Fade in the new icon
     }, 200); // Duration matches the CSS transition
 }
+
+
+
+//test
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Sample list of topics
+    const topics = [
+        { name: "Lidar 1", rate: "60", status: true },
+        { name: "Camera 1", rate: "50", status: true },
+        { name: "Camera 2", rate: "10", status: false },
+        { name: "GPS", rate: "5", status: false }
+    ];
+
+    // Function to dynamically generate topic elements
+    function displayTopics() {
+        const topicsList = document.getElementById("topic-list");
+
+        if (!topicsList) {
+            console.error("Element with ID 'topic-list' not found!");
+            return;
+        }
+
+        topics.forEach(topic => {
+            // Create container for each topic
+            const topicItem = document.createElement("div");
+            topicItem.className = "topic-item";
+
+            // Topic name
+            const topicName = document.createElement("div");
+            topicName.className = "topic-name";
+            topicName.textContent = topic.name;
+
+            // Publishing rate
+            const topicRate = document.createElement("div");
+            topicRate.className = "topic-rate";
+            topicRate.textContent = `Rate: ${topic.rate}`;
+
+            // Status indicator
+            const topicStatus = document.createElement("div");
+            topicStatus.className = "topic-status";
+
+            // Set background color based on status
+            topicStatus.style.backgroundColor = topic.status ? "#4caf50" : "#f44336"; // Green for true, red for false
+
+            // Append children to topic item
+            topicItem.appendChild(topicName);
+            topicItem.appendChild(topicRate);
+            topicItem.appendChild(topicStatus);
+
+            // Add the topic item to the topics list
+            topicsList.appendChild(topicItem);
+        });
+    }
+
+    // Call the function to populate the topics section
+    displayTopics();
+});

@@ -317,3 +317,51 @@ input[type=checkbox] {
     height: 35px;
     transition: opacity 0.2s ease;
 }
+
+
+/* test */
+
+/* Topics Section Styling */
+.topic-list-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.topic-list-container h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.topic-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.topic-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.topic-rate {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.topic-status {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+    border: 1px solid #999; /* Optional: Border for better visibility */
+}
