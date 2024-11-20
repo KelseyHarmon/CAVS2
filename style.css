@@ -314,7 +314,7 @@ input[type=checkbox] {
 }
 
 .control-button-icon {
-    height: 35px;
+    height: 40px;
     transition: opacity 0.2s ease;
 }
 
@@ -323,16 +323,15 @@ input[type=checkbox] {
 
 /* Topics Section Styling */
 .topic-list-container {
-    margin: 20px;
-    padding: 20px;
+    padding: 0px 10px 10px 10px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
 
 .topic-list-container h2 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+    margin: 8px;
+    font-size: 1rem;
     color: #333;
 }
 
@@ -340,28 +339,38 @@ input[type=checkbox] {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 3px 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .topic-name {
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: bold;
+    flex: 1;
+}
+
+.topic-right {
+    display: flex;
+    align-items: center;
 }
 
 .topic-rate {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     color: #666;
 }
 
 .topic-status {
     width: 20px;
     height: 20px;
-    border-radius: 50%;
+    border-radius: 25%;
     margin-left: 10px;
     border: 1px solid #999; /* Optional: Border for better visibility */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 110%; /* Adjust the size of the icon */
+    background-repeat: no-repeat;
+    background-position: center;
 }

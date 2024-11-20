@@ -111,10 +111,10 @@ function togglePlayPause() {
 document.addEventListener("DOMContentLoaded", () => {
     // Sample list of topics
     const topics = [
-        { name: "Lidar 1", rate: "60", status: true },
-        { name: "Camera 1", rate: "50", status: true },
-        { name: "Camera 2", rate: "10", status: false },
-        { name: "GPS", rate: "5", status: false }
+        { name: "Lidar 1", rate: "18", status: true },
+        { name: "Camera 1", rate: "20", status: true },
+        { name: "Camera 2", rate: "5", status: false },
+        { name: "GPS", rate: "12", status: false }
     ];
 
     // Function to dynamically generate topic elements
@@ -130,32 +130,46 @@ document.addEventListener("DOMContentLoaded", () => {
             // Create container for each topic
             const topicItem = document.createElement("div");
             topicItem.className = "topic-item";
-
+        
             // Topic name
             const topicName = document.createElement("div");
             topicName.className = "topic-name";
             topicName.textContent = topic.name;
-
+        
+            // Right-side container for rate and status
+            const topicRight = document.createElement("div");
+            topicRight.className = "topic-right";
+        
             // Publishing rate
             const topicRate = document.createElement("div");
             topicRate.className = "topic-rate";
-            topicRate.textContent = `Rate: ${topic.rate}`;
-
+            topicRate.textContent = `${topic.rate} hz`;
+        
             // Status indicator
             const topicStatus = document.createElement("div");
             topicStatus.className = "topic-status";
-
+        
             // Set background color based on status
-            topicStatus.style.backgroundColor = topic.status ? "#4caf50" : "#f44336"; // Green for true, red for false
-
-            // Append children to topic item
+            topicStatus.style.backgroundColor = topic.status ? "#a2a2a2" : "#f44336"; // Neutral for true, red for false
+            topicStatus.style.backgroundImage = topic.status
+            ? "url('assets/images/check.png')"
+            : "url('assets/images/x.png')"; // Icons
+            // topicStatus.style.backgroundSize = "contain";
+            topicStatus.style.backgroundRepeat = "no-repeat";
+            topicStatus.style.backgroundPosition = "center";
+        
+            // Append rate and status to the right-side container
+            topicRight.appendChild(topicRate);
+            topicRight.appendChild(topicStatus);
+        
+            // Append name and right-side container to the topic item
             topicItem.appendChild(topicName);
-            topicItem.appendChild(topicRate);
-            topicItem.appendChild(topicStatus);
-
+            topicItem.appendChild(topicRight);
+        
             // Add the topic item to the topics list
             topicsList.appendChild(topicItem);
         });
+        
     }
 
     // Call the function to populate the topics section
