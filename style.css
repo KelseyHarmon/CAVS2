@@ -253,7 +253,7 @@ input[type=checkbox] {
 /* ***************** */
 .main-body {
     display: flex;
-    height: calc(100vh - 60px); /* Full screen height minus header height */
+    height: calc(100vh - 90px); /* Full screen height minus header height */
     overflow: hidden;
 }
 
@@ -261,6 +261,9 @@ input[type=checkbox] {
     flex: 2;
     padding: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex-direction: column;
+    display: flex;
+    overflow: hidden;
 }
 
 .map-section {
@@ -270,6 +273,18 @@ input[type=checkbox] {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+
+/* data section */
+.data-feed-container {
+    flex-grow: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
 
