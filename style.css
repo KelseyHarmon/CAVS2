@@ -125,8 +125,15 @@ input[type=checkbox] {
     left: 0;
     bottom: 0;
     width: 100%;
-    text-align: center;
+    min-height: 50px;
+    text-align: right;
+    align-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.footer img {
+    height: 40px;
+    margin-right: 20px;
 }
 
 /* ************** */
@@ -280,11 +287,19 @@ input[type=checkbox] {
 .data-feed-container {
     flex-grow: 1;
     overflow-y: auto; /* Enable vertical scrolling */
-    background-color: #fff;
+    background-color: #f9f9f9;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-top: 10px;
+}
+
+.data-feed {
+    padding-top: 50%;
+    width: 100% - 2px; /*account for border*/
+    background-color: #fff;
+    border-radius: 25px;
+    border: 1px solid #ccc;
 }
 
 
