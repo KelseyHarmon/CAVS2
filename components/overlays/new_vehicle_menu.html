@@ -1,0 +1,25 @@
+<!-- components/overlays/new_vehicle_menu.html -->
+
+<div id="add-vehicle-overlay" class="overlay">
+    <p class="overlay-heading">Configure New Vehicle</p>
+
+    <form action="" id="vehicle-form">
+        <label for="vehicle-name">Vehicle Name</label>
+        <br>
+        <input type="text" name="vehicle-name" id="vehicle-name">
+        <br>
+
+        <label for="config-info-1">Configuration Information</label>
+        <br>
+        <input type="text" name="config-info-1" id="config-info-1">
+        <br>
+
+        <label for="config-info-2">Configuration Information</label>
+        <br>
+        <input type="text" name="config-info-2" id="config-info-2">
+    </form>
+
+    <button onclick="overlayOff('vehicle')" class="overlay-button" id="cancel-button">Cancel</button>
+    <button class="overlay-button" id="confirm-vehicle">Confirm</button>
+
+</div>
