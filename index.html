@@ -21,6 +21,7 @@
         <!-- main section -->
         <div class="main-body">
 
+            <!-- left portion of screen -->
             <div class="data-section">
                 
                 <!-- vehicle control button container -->
@@ -35,7 +36,7 @@
                       <img src="assets/images/play.png" id="playPauseIcon" class="control-button-icon">
                     </button>
                   
-                    <!-- Blank Button -->
+                    <!-- Blank Button ? -->
                     <button class="control-button"></button>
                 </div>
 
@@ -43,11 +44,13 @@
                 <!-- ros topic list container -->
                 <div class="topic-list-container">
                     <h2>Ros Topics Publishing</h2>
+                    <!-- pulling arbitrary list from script.js right now -->
                     <div id="topic-list">
 
                     </div>
                 </div>
 
+                <!-- container for different data feeds -->
                 <div class="data-feed-container">
                     <div class="data-feed">
                         <p style="text-align: center;">camera 1</p>
@@ -62,7 +65,8 @@
                         <p style="text-align: center;">point cloud</p>
                     </div>
 
-
+                    
+                    <!-- temporary overlay window tests -->
                     <h3>Temp Overlay Window Tests</h3>
                     <button onclick="overlayOn('shutdown')">Shut down</button>
                     <button onclick="overlayOn('vehicle')">Add Vehicle</button>
