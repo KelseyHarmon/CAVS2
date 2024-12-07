@@ -264,11 +264,6 @@ input[type=checkbox] {
 
 .map-section {
     flex: 5;
-    /* temporary static image set as background image */
-    background-image: url(assets/images/map.png); 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 
