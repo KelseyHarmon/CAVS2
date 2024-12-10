@@ -1,0 +1,41 @@
+<body>
+<div class="main-body">
+
+<div class="data-section">
+                
+    <!-- vehicle control button container -->
+    <div class="vehicle-control-button-container">
+        <!-- Shutdown Button -->
+        <button class="control-button" onclick="overlayOn('shutdown')">
+          <img src="assets/images/shutdown.png" class="control-button-icon">
+        </button>
+      
+        <!-- Play/Pause Button -->
+        <button class="control-button" onclick="togglePlayPause()">
+          <img src="assets/images/play.png" id="playPauseIcon" class="control-button-icon">
+        </button>
+      
+        <!-- Blank Button -->
+        <button class="control-button"></button>
+    </div>
+
+
+    <!-- ros topic list container -->
+    <div class="topic-list-container">
+        <h2>Ros Topics Publishing</h2>
+        <div id="topic-list">
+
+        </div>
+    </div>
+
+    <div class="data-feed-container">
+        <h3>Temp Overlay Window Tests</h3>
+        <button onclick="overlayOn('shutdown')">Shut down</button>
+        <button onclick="overlayOn('vehicle')">Add Vehicle</button>
+        <button onclick="overlayOn('data')">Add Data</button>     
+    </div>
+
+     
+</div>
+</div>
+</body>
