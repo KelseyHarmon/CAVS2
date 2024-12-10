@@ -383,6 +383,9 @@ input[type=checkbox] {
     background-repeat: no-repeat;
     background-position: center;
 }
+/* *********************** */
+/* Camera record button    */
+/* *********************** */
 .recorder-button {
     position: absolute;
     top: 10px;
