@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Remote Vehicle Monitoring</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+
+    </head>
+    <body>
+      
+        <!-- Load Components -->
+        <div id="header"></div>
+        <div id="footer"></div>
+        <div id="add_data_menu"></div>
+
+        
+        <br><br>
+
+        <!-- main section -->
+        <div class="main-body">
+
+            <!-- left portion of screen -->
+            <div class="data-section">
+
+                <!-- vehicle control button container -->
+                <div class="vehicle-control-button-container">
+                    <!-- Shutdown Button -->
+                    <button class="control-button" onclick="overlayOn('shutdown')">
+                      <img src="assets/images/shutdown.png" class="control-button-icon">
+                    </button>
+                  
+                    <!-- Play/Pause Button -->
+                    <button class="control-button" onclick="togglePlayPause()">
+                      <img src="assets/images/play.png" id="playPauseIcon" class="control-button-icon">
+                    </button>
+                  
+                    <!-- Add Data Button -->
+                    <button id="add-data-button" class="control-button" onclick="overlayOn('data')">Add Data</button>
+                </div>
+
+                <!-- container for different data feeds ONLY for data_view page (different layout) -->
+                <div class="data-view-container"></div>
+                 
+            </div>
+
+        </div>
+
+    </body>
+</html>
+
+

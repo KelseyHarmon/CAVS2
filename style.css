@@ -1,3 +1,4 @@
+
 /* *********************** */
 /* General Overlay Styling */
 /* *********************** */
@@ -281,6 +282,10 @@ input[type=checkbox] {
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 400px;
+    height: auto;
+    min-height: 370px;
 }
 
 .data-feed {
@@ -289,6 +294,93 @@ input[type=checkbox] {
     background-color: #fff;
     border-radius: 25px;
     border: 1px solid #ccc;
+}
+
+#add-data-homeButton {
+    font-size: 21px;
+    color: white;
+    height: 200vh;
+    width: 420;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+/* ****************************** */
+/* Data View Page Styling */
+/* ****************************** */
+
+#add-data-button {
+    font-size: 21px;
+    color: white;
+}
+
+.data-view-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: auto; /* Enable vertical scrolling */
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    flex-grow: 1;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: auto;
+}
+
+.data-feed {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+
+/* ****************************** */
+/* Vehicle Management Page Styling */
+/* ****************************** */
+
+#add-vehicle-button {
+    font-size: 21px;
+    color: white;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#add-vehicle-button:hover {
+    background-color: #656565;
+}
+
+.vehicle-info-container {
+    flex-grow: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 90px;
+    margin-bottom: 10px;
+    max-width: 950px;
+    height: auto;
+    min-height: 370px;
 }
 
 
@@ -302,6 +394,8 @@ input[type=checkbox] {
     align-items: center;
     gap: 15px;
     padding: 10px;
+    max-width: 430px;
+    margin-left: 0 auto;
 }
 .control-button {
     background-color: #898989;
@@ -343,6 +437,8 @@ input[type=checkbox] {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 8px;
+    max-width: 400px;
+    margin-left: 0 auto;
 }
 .topic-list-container h2 {
     margin: 8px;

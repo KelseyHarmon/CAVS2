@@ -1,3 +1,4 @@
+
 // *********************************
 // ****** Loading  Components ******
 // *********************************
@@ -8,6 +9,7 @@ function loadComponent(id, file) {
         .then(response => response.text())
         .then(data => {
             document.getElementById(id).innerHTML = data;
+
         })
         .catch(error => console.error('Error loading component:', error));
 }
@@ -19,7 +21,11 @@ loadComponent('shutdown_menu', 'components/overlays/shutdown_menu.html');
 loadComponent('new_vehicle_menu', 'components/overlays/new_vehicle_menu.html');
 loadComponent('add_data_menu', 'components/overlays/add_data_menu.html');
 
-
+document.addEventListener('click', (event) => {
+    if (event.target && event.target.id === 'confirm-data'){
+        populateDataFeeds();
+    }
+});
 
 // *********************************
 // ***** Overlay Functionality *****
@@ -104,6 +110,52 @@ function togglePlayPause() {
     }, 200); // Duration matches the CSS transition
 }
 
+
+// ***************************************
+// ***** Add Data Feed Functionality *****
+// ***************************************
+/*
+function populateDataFeeds() {
+
+    console.log(document.getElementById('confirm-data'));
+
+    // grabs the selected data topics from the check boxes
+    const selectedData = [];
+    const checkboxes = document.querySelectorAll('#data-form input[type="checkbox"]:checked');
+
+    checkboxes.forEach(checkbox => {
+        selectedData.push(checkbox.value)
+    });
+    
+    // determines correcty container based on the page that the user is on 
+    let dataFeedContainer;
+
+        // for home.html
+    if (window.location.href.includes('home.html')) {
+        dataFeedContainer = document.querySelector('.data-feed-container');
+    }
+        // for data_view.html
+    else if (window.location.href.includes('vehicle_data.html')){
+        dataFeedContainer = document.querySelector('.data-view-container');
+    }
+
+    // clears current data topics 
+    dataFeedContainer.innerHTML = '';
+
+    // create the new feed for each of the selected topics
+    selectedData.forEach(data => {
+        const dataFeed = document.createElement('div');
+        dataFeed.classList.add('data-feed');
+        dataFeed.textContent = data.replace('-',' ').toUpperCase();
+        dataFeedContainer.appendChild(dataFeed);
+    });
+
+    overlayOff('data');
+}
+
+// event loistener for comfirm button in the 'add data' overlay
+document.getElementById('confirm-data').addEventListener('click', populateDataFeeds);
+*/
 
 
 //test
