@@ -114,48 +114,63 @@ function togglePlayPause() {
 // ***************************************
 // ***** Add Data Feed Functionality *****
 // ***************************************
-/*
+
 function populateDataFeeds() {
 
-    console.log(document.getElementById('confirm-data'));
+    // event listener to confirm button
+    document.getElementById('confirm-data').addEventListener('click', () => {
 
-    // grabs the selected data topics from the check boxes
-    const selectedData = [];
-    const checkboxes = document.querySelectorAll('#data-form input[type="checkbox"]:checked');
+        // gets the selected checkboxes
+        const checkboxes = document.querySelectorAll('#data-form input[type="checkbox"]:checked');
+        const dataFeedContainer = document.querySelector('.data-feed-container');
 
-    checkboxes.forEach(checkbox => {
-        selectedData.push(checkbox.value)
-    });
+        // clears previous data possibly in the container
+        dataFeedContainer.innerHTML = "";
+
+        // loops throuhg selected check-boxed & creates new div element for the selected data feed(s)
+        checkboxes.forEach((checkbox) => {
+            const dataFeed = document.createElement('div');
+            dataFeed.className = 'data-feed';
+            dataFeed.innerHTML = `<p style="text-align: center;">${checkbox.value.replace(/ /g, ' ')}</p>`;
     
-    // determines correcty container based on the page that the user is on 
-    let dataFeedContainer;
+            // adds the new data feed topic to the data-feed-container
+            dataFeedContainer.appendChild(dataFeed);
 
-        // for home.html
-    if (window.location.href.includes('home.html')) {
-        dataFeedContainer = document.querySelector('.data-feed-container');
-    }
-        // for data_view.html
-    else if (window.location.href.includes('vehicle_data.html')){
-        dataFeedContainer = document.querySelector('.data-view-container');
-    }
+        });
 
-    // clears current data topics 
-    dataFeedContainer.innerHTML = '';
-
-    // create the new feed for each of the selected topics
-    selectedData.forEach(data => {
-        const dataFeed = document.createElement('div');
-        dataFeed.classList.add('data-feed');
-        dataFeed.textContent = data.replace('-',' ').toUpperCase();
-        dataFeedContainer.appendChild(dataFeed);
+        // clears checkboxes for next time button is clicked
+        const allCheckboxes = document.querySelectorAll('#data-form input[type="checkbox"]');
+        allCheckboxes.forEach((checkbox) => {
+            checkbox.checked = false;
+        });
+        
+        // closes the overlay 
+        const overlay = document.getElementById('add-data-overlay');
+        if (overlay){
+            overlay.style.display('none');
+        }
     });
 
-    overlayOff('data');
+    // makes sure that the overlay is ready for new checkbox/container population selection
+    const addDataButton = document.getElementById('add-data-button');
+    addDataButton.addEventListener('click', () => {
+        // ensures overlay is visible when 'add data' buttom = clicked
+        const overlay = document.getElementById('add-data-overlay');
+        if (overlay){
+            overlay.style.display = 'block';
+        }
+
+        // resets form when overlay = opened again for new topic selection
+        const allCheckboxes = document.querySelectorAll('#data-form input[type="checkbox"]');
+        allCheckboxes.forEach((checkbox) => {
+            checkbox.checked = false;
+        });
+
+    });
+
 }
 
-// event loistener for comfirm button in the 'add data' overlay
-document.getElementById('confirm-data').addEventListener('click', populateDataFeeds);
-*/
+
 
 
 //test
