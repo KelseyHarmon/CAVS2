@@ -78,23 +78,20 @@
 
             <div class="map-section">
                 <div class="console-container">
-                    <div class="console">
-                        <h2>Ros Topics Publishing</h2>
-                        <div id="topic-list">
-
-                        </div>
-                    </div>
+                    <button class="rosconsole" onclick="toggleConsole()" id="rosconsole">
+                        Ros Console Output:
+                    </button>
                 </div>
                 <div class="tab-section">
-                    <div class="tab" style="background-color: purple;">
+                    <button class="tab open" onclick="openVehicle(event, A)" id="A">
                         A
-                    </div>
-                    <div class="tab" style="background-color: yellow;">
+                    </button>
+                    <button class="tab" onclick="openVehicle(event, B)" id="B">
                         B
-                    </div>
-                    <div class="tab" style="background-color: orangered;">
+                    </button>
+                    <button class="tab" onclick="openVehicle(event, C)" id="C">
                         C
-                    </div>
+                    </button>
                 </div>
                 <!-- temporary static image set as background image -->
             </div>

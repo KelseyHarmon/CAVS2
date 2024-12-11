@@ -52,8 +52,8 @@ function overlayOff(menu_name) {
             document.getElementById("add-data-overlay").style.display = "none";
             break;
         case "vehicle":
-        document.getElementById("add-vehicle-overlay").style.display = "none";
-        break;
+            document.getElementById("add-vehicle-overlay").style.display = "none";
+            break;
         default:
             break;
     }
@@ -105,6 +105,41 @@ function togglePlayPause() {
 }
 
 
+// ***********************************
+// *** Tabs & Console Functionality **
+// **********************************
+
+
+function toggleConsole() {
+    var element = document.getElementById("rosconsole");
+    element.classList.toggle("active");
+    if (element.style.maxHeight){
+      element.style.maxHeight = null;
+    } else {
+      element.style.maxHeight = "70%";
+    } 
+}
+
+function openVehicle(evt, vehicleName) {
+    // Declare all variables
+    var i, tabcontent, tabs;
+  
+    // Get all elements with class="tabcontent" and hide them
+    /*tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }*/
+  
+    // Get all elements with class="tab" and remove the class "active"
+    tabs = document.getElementsByClassName("tab");
+    for (i = 0; i < tabs.length; i++) {
+      tabs[i].className = tabs[i].className.replace(" open", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    //document.getElementById(vehicleName).style.display = "block";
+    evt.currentTarget.className += " open";
+  }
 
 //test
 

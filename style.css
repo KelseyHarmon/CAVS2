@@ -12,7 +12,7 @@
     right: 0;
     bottom: 0;
     background-color: #EDEDED;
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
     margin: auto;
     border-radius: 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -283,12 +283,22 @@ input[type=checkbox] {
     flex-shrink: 1;
     padding: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
     flex-direction: column;
     display: flex;
     overflow: hidden;
-    background-color: grey;
+    background-color: #c9c9c9;
     justify-content: center;
     align-items: center;
+}
+
+.open {
+    background-color: #fcfcfc;
+}
+
+.tab:hover {
+    background-color: #efefef;
 }
 
 .console-container{
@@ -302,15 +312,43 @@ input[type=checkbox] {
     align-items: center;
 }
 
-.console{
+.rosconsole{
     padding: 0px 10px 10px 10px;
+    height: 70%;
     width: 60%;
-    background-color: #f9f9f9;
+    background-color: #f1f1f1;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin: 35px, 35px, 35px, 0px;
     font-size: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 10%;
+    transition: max-height ease 0.2s;
+    text-align: left;
+    vertical-align: top;
+    display: flex;
+    flex-direction: column;
 }
+
+.active, .rosconsole:hover {
+    background-color: #fefefe;
+}
+
+
+.rosconsole::before {
+    content: '▲';
+    color: rgb(29, 29, 29);
+    font-weight: bold;
+    float: right;
+    margin-right: 5px;
+    margin-top: 15px;
+}
+  
+.active::before {
+    content: '▼';
+}
+
 
 .map-section {
     flex: 5;
