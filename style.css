@@ -310,6 +310,7 @@ input[type=checkbox] {
     flex-direction: column;
     justify-content: end;
     align-items: center;
+    pointer-events: none;
 }
 
 .rosconsole{
@@ -329,6 +330,7 @@ input[type=checkbox] {
     vertical-align: top;
     display: flex;
     flex-direction: column;
+    pointer-events: all;
 }
 
 .active, .rosconsole:hover {
