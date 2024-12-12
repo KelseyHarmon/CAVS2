@@ -255,6 +255,48 @@ function openVehicle(evt, vehicleName) {
     evt.currentTarget.className += " open";
   }
 
+function updateTabs() {
+    const currentPage = window.location.pathname;
+    let targetContainer;
+
+    // if-statements to figure out which page the user is clicking 'add data' button on
+    if (currentPage == '/home.html'){
+        targetContainer = document.querySelector('.tab-section');
+    }
+    else{
+        return;
+    }
+
+    // clears existing data feeds
+    console.log(targetContainer.innerHTML = "");
+
+    // creates and appends the data feed topic divs
+    for (const vehicle of JSON.parse(localStorage.getItem('vehicles'))) { 
+        const tab = document.createElement('button');
+        console.log(vehicle);
+        tab.className = 'tab';
+        tab.textContent = vehicle.name;
+        tab.id = vehicle.name;
+        tab.onclick = 'openVehicle(event, vehicle.name);';
+        tab.addEventListener("click", function() {
+            openVehicle(event, vehicle.name);
+        });
+        targetContainer.appendChild(tab);
+        console.log(vehicle.name);
+    };
+
+    const plusV = document.createElement('button');
+    plusV.className = 'tab plusV';
+    plusV.textContent = '+';
+    plusV.addEventListener("click", function() {
+        overlayOn("vehicle");
+    });
+    targetContainer.appendChild(plusV);
+}
+
+
+
+
 //test
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -368,6 +410,7 @@ function addVehicle(name, port) {
     // Save the updated list to localStorage
     saveVehicles();
 
+    updateTabs();
     return true; // Return true to indicate success
 }
 
@@ -388,6 +431,7 @@ function removeVehicle(name) {
     // Re-render the vehicle list on the page
     displayVehicles();
 
+    updateTabs();
     return true; // Return true to indicate success
 }
 
@@ -396,8 +440,8 @@ function displayVehicles() {
     const vehicleContainer = document.getElementById('vehicle-list');
 
     if (!vehicleContainer) {
-        console.error("Vehicle list container not found in the DOM! Or on different page.");
-        return;
+        //console.error("Vehicle list container not found in the DOM! Or on different page.");
+        //return;
     }    
     vehicleContainer.innerHTML = ''; // Clear the existing list
 
@@ -446,3 +490,6 @@ function handleRemoveVehicle(name) {
 document.addEventListener("DOMContentLoaded", () => {
     loadVehicles();
 });
+// Load vehicles when the page is loaded
+window.onload = loadVehicles;
+window.onload = updateTabs;

@@ -308,6 +308,11 @@ input[type=checkbox] {
     background-color: #efefef;
 }
 
+.plusV {
+    flex-grow:0; 
+    height: 5vh;
+}
+
 .console-container{
     position: absolute;
     z-index: 2;
