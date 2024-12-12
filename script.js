@@ -8,8 +8,12 @@ function loadComponent(id, file) {
     fetch(file)
         .then(response => response.text())
         .then(data => {
-            document.getElementById(id).innerHTML = data;
-
+            const element = document.getElementById(id);
+            if (!element) {
+                console.error(`Element with id '${id}' not found.`);
+                return;
+            }
+            element.innerHTML = data;
         })
         .catch(error => console.error('Error loading component:', error));
 }
@@ -266,6 +270,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function displayTopics() {
         const topicsList = document.getElementById("topic-list");
 
+        if (window.location.pathname != "/home.html"){ //only load topic list from home page
+            return;
+        }
+
         if (!topicsList) {
             console.error("Element with ID 'topic-list' not found!");
             return;
@@ -386,6 +394,11 @@ function removeVehicle(name) {
 // Display all vehicles on the page
 function displayVehicles() {
     const vehicleContainer = document.getElementById('vehicle-list');
+
+    if (!vehicleContainer) {
+        console.error("Vehicle list container not found in the DOM! Or on different page.");
+        return;
+    }    
     vehicleContainer.innerHTML = ''; // Clear the existing list
 
     vehicles.forEach(vehicle => {
@@ -427,5 +440,9 @@ function handleRemoveVehicle(name) {
     }
 }
 
-// Load vehicles when the page is loaded
-window.onload = loadVehicles;
+// // Load vehicles when the page is loaded
+// window.onload = loadVehicles;
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadVehicles();
+});
