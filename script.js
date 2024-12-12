@@ -182,18 +182,26 @@ function populateDataFeeds() {
 
         // check if data is a camera
         if (checkbox.classList.contains('camera')) {
-            dataFeed.classList.add('camera-view'); // Optional: Add a specific class for styling
+            dataFeed.classList.add('camera-view');
 
-            // Create the record button
             const recordButton = document.createElement('button');
             recordButton.className = 'recorder-button';
-            // recordButton.setAttribute('onclick', `startRecording(${index + 1})`);
             recordButton.onclick = () => startRecording(index + 1);
 
-            // Append the record button to the data feed
             dataFeed.appendChild(recordButton);
         }
 
+        // const gifPath = `data/${vehicleName}_${checkbox.value}.gif`; // Change once vehicles added
+        const gifPath = `data/${checkbox.value}.gif`; // Change once vehicles added
+        const gifElement = document.createElement('img');
+        gifElement.src = gifPath;
+        // gifElement.alt = `${checkbox.value} data for ${vehicleName}`;
+        gifElement.onerror = () => {
+            gifElement.alt = `No data available for ${checkbox.value}`;
+        };
+
+        dataFeed.appendChild(gifElement);
+        
         targetContainer.appendChild(dataFeed);
     });
 
