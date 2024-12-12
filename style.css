@@ -501,6 +501,10 @@ input[type=checkbox] {
 }
 
 
+.camera-view {
+    position: relative;
+}
+
 
 /* ****************************** */
 /* Vehicle Control Button Styling */
@@ -594,4 +598,22 @@ input[type=checkbox] {
     background-size: 110%;
     background-repeat: no-repeat;
     background-position: center;
+}
+/* *********************** */
+/* Camera record button    */
+/* *********************** */
+
+.recorder-button {
+    position: absolute;
+    top: 8px;
+    right: 4px;
+    background-color: darkred;
+    padding:10px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    z-index: 10;
+}
+
+.active-rec {
+    background-color: red;
 }
