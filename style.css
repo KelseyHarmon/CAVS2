@@ -270,6 +270,7 @@ input[type=checkbox] {
     position: absolute;
     z-index: 2;
     width: 2.5%;
+    max-width: 40px;
     height: 70%;
     flex: 0.25;
     padding: 0px, 20px;
@@ -287,7 +288,7 @@ input[type=checkbox] {
     flex-shrink: 1;
     padding: 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 2.5vh 2.5vh 0px;
     border: none;
     flex-direction: column;
     display: flex;
@@ -309,7 +310,7 @@ input[type=checkbox] {
     position: absolute;
     z-index: 2;
     width: 70%;
-    height: 80%;
+    height: calc(100vh - 100px);
     display: flex;
     flex-direction: column;
     justify-content: end;
