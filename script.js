@@ -430,6 +430,12 @@ function removeVehicle(name) {
         return false; // Return false to indicate failure
     }
 
+    // Check if the vehicle being removed is the currently selected vehicle
+    if (vehicles[index].name === getSelectedVehicle()?.name) {
+        clearSelectedVehicle(); // Clear selected vehicle if it's being removed
+        console.log(`Selected vehicle '${name}' has been removed, selection cleared.`);
+    }
+
     vehicles.splice(index, 1); // Remove the vehicle object
     console.log(`Vehicle '${name}' removed successfully.`);
 
