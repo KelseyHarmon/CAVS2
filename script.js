@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Save vehicles using localStorage //
 ////////////////////////////////////
 
-let vehicles = [];
+let vehicles = []; // Array of objects { name: string, port: string }
 
 // Load vehicles from localStorage on page load
 function loadVehicles() {
@@ -342,19 +342,20 @@ function saveVehicles() {
 }
 
 // Add a vehicle to the array and update localStorage
-function addVehicle(name) {
-    if (!name || typeof name !== 'string') {
-        console.error("Invalid vehicle name.");
+function addVehicle(name, port) {
+    if (!name || typeof name !== 'string' || !port || isNaN(port)) {
+        console.error("Invalid vehicle name or port number.");
         return false; // Return false to indicate failure
     }
 
-    if (vehicles.includes(name)) {
+    // Check for duplicate vehicle names
+    if (vehicles.some(vehicle => vehicle.name === name)) {
         console.warn("Vehicle name already exists in the array.");
         return false; // Return false to indicate duplicate
     }
 
-    vehicles.push(name);
-    console.log(`Vehicle '${name}' added successfully.`);
+    vehicles.push({ name, port });
+    console.log(`Vehicle '${name}' with port '${port}' added successfully.`);
 
     // Save the updated list to localStorage
     saveVehicles();
@@ -364,13 +365,13 @@ function addVehicle(name) {
 
 // Remove a vehicle from the array and update localStorage
 function removeVehicle(name) {
-    const index = vehicles.indexOf(name);
+    const index = vehicles.findIndex(vehicle => vehicle.name === name);
     if (index === -1) {
         console.warn("Vehicle name not found in the array.");
         return false; // Return false to indicate failure
     }
 
-    vehicles.splice(index, 1); // Remove the vehicle name
+    vehicles.splice(index, 1); // Remove the vehicle object
     console.log(`Vehicle '${name}' removed successfully.`);
 
     // Save the updated list to localStorage
@@ -382,11 +383,6 @@ function removeVehicle(name) {
     return true; // Return true to indicate success
 }
 
-// Get all vehicles
-function getVehicles() {
-    return vehicles;
-}
-
 // Display all vehicles on the page
 function displayVehicles() {
     const vehicleContainer = document.getElementById('vehicle-list');
@@ -396,8 +392,8 @@ function displayVehicles() {
         const vehicleDiv = document.createElement('div');
         vehicleDiv.className = 'vehicle-item';
         vehicleDiv.innerHTML = `
-            <span>${vehicle}</span>
-            <button onclick="handleRemoveVehicle('${vehicle}')">Remove</button>
+            <span>${vehicle.name} (Port: ${vehicle.port})</span>
+            <button onclick="handleRemoveVehicle('${vehicle.name}')">Remove</button>
         `;
         vehicleContainer.appendChild(vehicleDiv);
     });
@@ -405,16 +401,20 @@ function displayVehicles() {
 
 // Handle the add vehicle form
 function handleAddVehicle() {
-    const input = document.getElementById('vehicle-name');
-    const vehicleName = input.value.trim();
+    const nameInput = document.getElementById('vehicle-name');
+    const portInput = document.getElementById('port-number');
 
-    if (addVehicle(vehicleName)) {
-        input.value = ""; // Clear the input on success
-        console.log(getVehicles()); // Log updated array for debugging
-        
+    const vehicleName = nameInput.value.trim();
+    const portNumber = portInput.value.trim();
+
+    if (addVehicle(vehicleName, portNumber)) {
+        nameInput.value = ""; // Clear the name input on success
+        portInput.value = ""; // Clear the port input on success
+        console.log(vehicles); // Log updated array for debugging
+
         // Close the overlay
         overlayOff('vehicle');
-        
+
         // Re-render the vehicle list
         displayVehicles();
     }
