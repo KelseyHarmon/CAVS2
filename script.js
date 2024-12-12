@@ -253,6 +253,16 @@ function openVehicle(evt, vehicleName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     //document.getElementById(vehicleName).style.display = "block";
     evt.currentTarget.className += " open";
+
+    // Set the selected vehicle in localStorage
+    const vehicles = JSON.parse(localStorage.getItem('vehicles')) || [];
+    const selectedVehicle = vehicles.find(vehicle => vehicle.name === vehicleName);
+
+    if (selectedVehicle) {
+        setSelectedVehicle(selectedVehicle); // Save to localStorage
+        updateSelectedVehicleDisplay(selectedVehicle); // Update the UI
+    }
+    
   }
 
 function updateTabs() {
@@ -268,12 +278,11 @@ function updateTabs() {
     }
 
     // clears existing data feeds
-    console.log(targetContainer.innerHTML = "");
+    // console.log(targetContainer.innerHTML = "");
 
     // creates and appends the data feed topic divs
     for (const vehicle of JSON.parse(localStorage.getItem('vehicles'))) { 
         const tab = document.createElement('button');
-        console.log(vehicle);
         tab.className = 'tab';
         tab.textContent = vehicle.name;
         tab.id = vehicle.name;
@@ -282,7 +291,6 @@ function updateTabs() {
             openVehicle(event, vehicle.name);
         });
         targetContainer.appendChild(tab);
-        console.log(vehicle.name);
     };
 
     const plusV = document.createElement('button');
@@ -493,3 +501,44 @@ document.addEventListener("DOMContentLoaded", () => {
 // Load vehicles when the page is loaded
 window.onload = loadVehicles;
 window.onload = updateTabs;
+
+
+///////////////////////////
+// selected vehicle code //
+///////////////////////////
+
+function setSelectedVehicle(vehicle) {
+    if (!vehicle || !vehicle.name || !vehicle.port) {
+        console.error("Invalid vehicle object provided.");
+        return;
+    }
+    localStorage.setItem("selectedVehicle", JSON.stringify(vehicle));
+}
+
+function getSelectedVehicle() {
+    const selectedVehicle = localStorage.getItem("selectedVehicle");
+    return selectedVehicle ? JSON.parse(selectedVehicle) : null;
+}
+
+function hasSelectedVehicle() {
+    return !!localStorage.getItem("selectedVehicle");
+}
+
+function clearSelectedVehicle() {
+    localStorage.removeItem("selectedVehicle");
+}
+
+function updateSelectedVehicleDisplay(vehicle) {
+    const selectedVehicleContainer = document.getElementById('selected-vehicle-name');
+    if (vehicle && vehicle.name) {
+        selectedVehicleContainer.textContent = `Vehicle ${vehicle.name} Selected`;
+    } else {
+        selectedVehicleContainer.textContent = "No Vehicle Selected";
+    }
+}
+
+// Call this on page load to show the previously selected vehicle, if any
+document.addEventListener("DOMContentLoaded", () => {
+    const selectedVehicle = getSelectedVehicle();
+    updateSelectedVehicleDisplay(selectedVehicle);
+});
