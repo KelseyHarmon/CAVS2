@@ -278,6 +278,7 @@ function updateTabs() {
     }
 
     // clears existing data feeds
+    targetContainer.innerHTML = "";
     // console.log(targetContainer.innerHTML = "");
 
     // creates and appends the data feed topic divs
@@ -286,6 +287,13 @@ function updateTabs() {
         tab.className = 'tab';
         tab.textContent = vehicle.name;
         tab.id = vehicle.name;
+        console.log("tab: " + vehicle.name);
+        if(localStorage.getItem('selectedVehicle')) {
+            if (vehicle.name == JSON.parse(localStorage.getItem('selectedVehicle')).name){
+                tab.className += ' open';
+                console.log("tab open: " + vehicle.name);
+            }
+        }
         tab.onclick = 'openVehicle(event, vehicle.name);';
         tab.addEventListener("click", function() {
             openVehicle(event, vehicle.name);
