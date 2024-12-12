@@ -680,11 +680,16 @@ input[type=checkbox] {
 /* *********************** */
 
 .recorder-button {
+    max-height: 0.5vh;
+    max-width: 0.5vh;
     position: absolute;
     top: 15px;
     right: 15px;
+    top: 8px;
+    right: 8px;
     background-color: darkred;
     padding:10px;
+    border: none;
     box-sizing: border-box;
     border-radius: 100%;
     z-index: 2;
