@@ -286,7 +286,6 @@ input[type=checkbox] {
     border-radius: 8px;
     margin-top: 10px;
     margin-bottom: 10px;
-    max-width: 400px;
     height: auto;
     min-height: 500px;
 }
@@ -308,6 +307,7 @@ input[type=checkbox] {
     color: white;
     width: flex;
     height: auto;
+    max-height: 50px;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -417,7 +417,6 @@ input[type=checkbox] {
     align-items: center;
     gap: 15px;
     padding: 10px;
-    max-width: 430px;
     margin-left: 0 auto;
 }
 .control-button {
@@ -460,7 +459,6 @@ input[type=checkbox] {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 8px;
-    max-width: 400px;
     margin-left: 0 auto;
 }
 .topic-list-container h2 {
