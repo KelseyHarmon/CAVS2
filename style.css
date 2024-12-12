@@ -291,6 +291,10 @@ input[type=checkbox] {
     border: 1px solid #ccc;
 }
 
+.camera-view {
+    position: relative;
+}
+
 
 /* ****************************** */
 /* Vehicle Control Button Styling */
@@ -386,32 +390,18 @@ input[type=checkbox] {
 /* *********************** */
 /* Camera record button    */
 /* *********************** */
+
 .recorder-button {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: red;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    top: 8px;
+    right: 4px;
+    background-color: darkred;
+    padding:10px;
+    box-sizing: border-box;
+    border-radius: 100%;
     z-index: 10;
 }
 
-.recorder-button.recording {
-    background-color: darkred;
-    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
-}
-
-.recorder-button span {
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
+.active-rec {
+    background-color: red;
 }

@@ -104,6 +104,34 @@ function togglePlayPause() {
     }, 200); // Duration matches the CSS transition
 }
 
+// Hear me out...
+var recording = false;
+
+// Recording Button
+function startRecording(camNum) {
+    var cams;
+    cams = document.getElementsByClassName("recorder-button");
+
+    // turn the buttons red if recording
+    if (camNum == 1 && !recording) {
+        cams[0].classList.add("active-rec");
+        recording = true;
+    } else if (camNum == 2 && !recording) {
+        cams[1].classList.add("active-rec");
+        recording = true;
+    }
+
+    // turn the buttons dark if stop recording
+    else if (camNum == 1 && recording) {
+        cams[0].classList.remove("active-rec");
+        recording = false;
+    } else if (camNum == 2 && recording) {
+        cams[1].classList.remove("active-rec");
+        recording = false;
+    }
+}
+
+
 
 
 //test
