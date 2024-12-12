@@ -110,6 +110,34 @@ function togglePlayPause() {
     }, 200); // Duration matches the CSS transition
 }
 
+// Hear me out...
+var recording = false;
+
+// Recording Button
+function startRecording(camNum) {
+    var cams;
+    cams = document.getElementsByClassName("recorder-button");
+
+    // turn the buttons red if recording
+    if (camNum == 1 && !recording) {
+        cams[0].classList.add("active-rec");
+        recording = true;
+    } else if (camNum == 2 && !recording) {
+        cams[1].classList.add("active-rec");
+        recording = true;
+    }
+
+    // turn the buttons dark if stop recording
+    else if (camNum == 1 && recording) {
+        cams[0].classList.remove("active-rec");
+        recording = false;
+    } else if (camNum == 2 && recording) {
+        cams[1].classList.remove("active-rec");
+        recording = false;
+    }
+}
+
+
 
 // ***************************************
 // ***** Add Data Feed Functionality *****
@@ -139,7 +167,7 @@ function populateDataFeeds() {
     const checkboxes = document.querySelectorAll('#data-form input[type="checkbox"]:checked');
 
     // cretaes and appends the data feed topic divs
-    checkboxes.forEach((checkbox) => {
+    checkboxes.forEach((checkbox, index) => {
         const dataFeed = document.createElement('div');
         dataFeed.className = 'data-feed';
 
@@ -151,6 +179,21 @@ function populateDataFeeds() {
         }
 
         dataFeed.textContent = checkbox.value;
+
+        // check if data is a camera
+        if (checkbox.classList.contains('camera')) {
+            dataFeed.classList.add('camera-view'); // Optional: Add a specific class for styling
+
+            // Create the record button
+            const recordButton = document.createElement('button');
+            recordButton.className = 'recorder-button';
+            // recordButton.setAttribute('onclick', `startRecording(${index + 1})`);
+            recordButton.onclick = () => startRecording(index + 1);
+
+            // Append the record button to the data feed
+            dataFeed.appendChild(recordButton);
+        }
+
         targetContainer.appendChild(dataFeed);
     });
 
