@@ -449,6 +449,7 @@ input[type=checkbox] {
 #add-data-button {
     font-size: 25px;
     color: white;
+    min-width: 500px;
 }
 
 .data-view-container {

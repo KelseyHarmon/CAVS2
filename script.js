@@ -261,7 +261,7 @@ function openVehicle(evt, vehicleName) {
     if (selectedVehicle) {
         setSelectedVehicle(selectedVehicle); // Save to localStorage
         updateSelectedVehicleDisplay(selectedVehicle); // Update the UI
-        document.getElementById("data-section").style.display = "block";
+        document.getElementById("data-section").style.display = "flex";
     }
     
   }
@@ -293,7 +293,7 @@ function updateTabs() {
             if (vehicle.name == JSON.parse(localStorage.getItem('selectedVehicle')).name){
                 tab.className += ' open';
                 console.log("tab open: " + vehicle.name);
-                document.getElementById("data-section").style.display = "block";
+                document.getElementById("data-section").style.display = "flex";
             }
         }
         tab.onclick = 'openVehicle(event, vehicle.name);';
