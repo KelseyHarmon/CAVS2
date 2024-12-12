@@ -320,3 +320,112 @@ document.addEventListener("DOMContentLoaded", () => {
     // Call the function to populate the topics section
     displayTopics();
 });
+
+
+
+////////////////////////////////////
+// Save vehicles using localStorage //
+////////////////////////////////////
+
+let vehicles = [];
+
+// Load vehicles from localStorage on page load
+function loadVehicles() {
+    const savedVehicles = JSON.parse(localStorage.getItem('vehicles')) || [];
+    vehicles = savedVehicles;
+    displayVehicles();  // Call displayVehicles to render vehicles on page load
+}
+
+// Save vehicles to localStorage
+function saveVehicles() {
+    localStorage.setItem('vehicles', JSON.stringify(vehicles));
+}
+
+// Add a vehicle to the array and update localStorage
+function addVehicle(name) {
+    if (!name || typeof name !== 'string') {
+        console.error("Invalid vehicle name.");
+        return false; // Return false to indicate failure
+    }
+
+    if (vehicles.includes(name)) {
+        console.warn("Vehicle name already exists in the array.");
+        return false; // Return false to indicate duplicate
+    }
+
+    vehicles.push(name);
+    console.log(`Vehicle '${name}' added successfully.`);
+
+    // Save the updated list to localStorage
+    saveVehicles();
+
+    return true; // Return true to indicate success
+}
+
+// Remove a vehicle from the array and update localStorage
+function removeVehicle(name) {
+    const index = vehicles.indexOf(name);
+    if (index === -1) {
+        console.warn("Vehicle name not found in the array.");
+        return false; // Return false to indicate failure
+    }
+
+    vehicles.splice(index, 1); // Remove the vehicle name
+    console.log(`Vehicle '${name}' removed successfully.`);
+
+    // Save the updated list to localStorage
+    saveVehicles();
+
+    // Re-render the vehicle list on the page
+    displayVehicles();
+
+    return true; // Return true to indicate success
+}
+
+// Get all vehicles
+function getVehicles() {
+    return vehicles;
+}
+
+// Display all vehicles on the page
+function displayVehicles() {
+    const vehicleContainer = document.getElementById('vehicle-list');
+    vehicleContainer.innerHTML = ''; // Clear the existing list
+
+    vehicles.forEach(vehicle => {
+        const vehicleDiv = document.createElement('div');
+        vehicleDiv.className = 'vehicle-item';
+        vehicleDiv.innerHTML = `
+            <span>${vehicle}</span>
+            <button onclick="handleRemoveVehicle('${vehicle}')">Remove</button>
+        `;
+        vehicleContainer.appendChild(vehicleDiv);
+    });
+}
+
+// Handle the add vehicle form
+function handleAddVehicle() {
+    const input = document.getElementById('vehicle-name');
+    const vehicleName = input.value.trim();
+
+    if (addVehicle(vehicleName)) {
+        input.value = ""; // Clear the input on success
+        console.log(getVehicles()); // Log updated array for debugging
+        
+        // Close the overlay
+        overlayOff('vehicle');
+        
+        // Re-render the vehicle list
+        displayVehicles();
+    }
+}
+
+// Handle the removal of a vehicle
+function handleRemoveVehicle(name) {
+    if (removeVehicle(name)) {
+        console.log(`${name} has been removed.`);
+    }
+}
+
+// Load vehicles when the page is loaded
+window.onload = loadVehicles;
