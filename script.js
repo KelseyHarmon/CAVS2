@@ -162,19 +162,6 @@ function populateDataFeeds() {
 
 }
 
-// event listener for 'confirm' button
-document.getElementById('confirm-data').addEventListener('click', populateDataFeeds);
-
-// event listener for 'add data' button
-document.getElementById('add-data-homeButton').addEventListener('click', () => {
-    overlayOn('data');
-});
-
-// event listener for 'add data' button
-document.getElementById('add-data-button').addEventListener('click', () => {
-    overlayOn('data');
-});
-
 
 
 // ***********************************
