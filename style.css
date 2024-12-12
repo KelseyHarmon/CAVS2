@@ -501,6 +501,37 @@ input[type=checkbox] {
     max-width: 100%;
 }
 
+.vehicle-item {
+    display: flex;
+    justify-content: space-between; /* This will space out the vehicle name and the button */
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.vehicle-item span {
+    font-size: 18px;
+}
+
+.vehicle-item button {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.vehicle-item button:hover {
+    background-color: darkred;
+}
+
+.vehicle-list {
+    padding: 0;
+    margin: 0;
+}
 
 .camera-view {
     position: relative;
