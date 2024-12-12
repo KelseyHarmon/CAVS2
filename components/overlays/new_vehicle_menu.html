@@ -1,0 +1,21 @@
+<!-- components/overlays/new_vehicle_menu.html -->
+
+<div id="add-vehicle-overlay" class="overlay" style="height: 70%;">
+    <p class="overlay-heading">Add New Vehicle</p>
+
+    <form action="" id="vehicle-form">
+        <label for="vehicle-name">Vehicle Name:</label>
+        <br>
+        <input type="text" name="vehicle-name" id="vehicle-name">
+        <br>
+
+        <label for="port-number">Port Number</label>
+        <br>
+        <input type="text" name="port-number" id="port-number">
+        <br>
+    </form>
+
+    <button onclick="overlayOff('vehicle')" class="overlay-button" id="cancel-button">Cancel</button>
+    <button onclick="handleAddVehicle()"  class="overlay-button" id="confirm-vehicle">Confirm</button>
+
+</div>

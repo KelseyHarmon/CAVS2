@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Remote Vehicle Monitoring</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+
+        <!-- Imports for Leaflet -->
+	  	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	  	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/roslib@1.0.0/build/roslib.min.js"></script> <!-- roslib ws import -->
+	  	<script src="script.js"></script> <!-- This will be our custom JavaScript -->
+    </head>
+    <body>
+
+        <!-- Load Components -->
+        <div id="header"></div>
+        <div id="footer"></div>
+        <div id="shutdown_menu"></div>
+        <div id="new_vehicle_menu"></div>
+        <div id="add_data_menu"></div>
+
+        <br><br>
+
+        <!-- main section -->
+        <div class="main-body">
+
+            <!-- left portion of screen -->
+            <div class="data-section">
+                
+                <!-- vehicle control button container -->
+                <div class="vehicle-control-button-container">
+
+                    <!-- Shutdown Button -->
+                    <button class="control-button" onclick="overlayOn('shutdown')">
+                      <img src="assets/images/shutdown.png" class="control-button-icon">
+                    </button>
+                  
+                    <!-- Play/Pause Button -->
+                    <button class="control-button" onclick="togglePlayPause()">
+                      <img src="assets/images/play.png" id="playPauseIcon" class="control-button-icon">
+                    </button>
+                  
+                    <!-- Blank Button ? -->
+                    <button class="control-button"></button>
+                </div>
+
+
+                <!-- ros topic list container -->
+                <div class="topic-list-container">
+                    <h2>Ros Topics Publishing</h2>
+                    <!-- pulling arbitrary list from script.js right now -->
+                    <div id="topic-list">
+                        
+                    </div>
+                </div>
+
+                <!-- container for different data feeds -->
+                <div class="data-feed-container"></div>
+
+
+                <!-- Add Data Button -->
+                <button id="add-data-homeButton" class="control-button" onclick="overlayOn('data')">Add Data</button>
+
+                 
+            </div>
+
+            <div class="map-section">
+
+                <div class="console-container">
+                    <button class="rosconsole" onclick="toggleConsole()" id="rosconsole">
+                        Ros Console Output: <br>
+                        >> ROS Stream Starting... <br>
+                        <div id="data-output">Waiting for data...</div>
+                    </button>
+                </div>
+                <div class="tab-section">
+                    <button class="tab open" onclick="openVehicle(event, A)" id="A">
+                        Absolut
+                    </button>
+                    <button class="tab" onclick="openVehicle(event, B)" id="B">
+                        Brick
+                    </button>
+                    <button class="tab" onclick="openVehicle(event, C)" id="C">
+                        Crisis
+                    </button>
+                    <button class="tab" onclick="overlayOn('vehicle')" id="+" style="flex-grow:0; height: 5vh">
+                        +
+                    </button>
+                </div>
+            	<div class="map" id="map"></div> <!-- Map container -->
+            </div>
+
+        </div>
+
+    </body>
+</html>
+

@@ -1,0 +1,39 @@
+<!-- components/overlays/add_data_menu.html -->
+
+<div id="add-data-overlay" class="overlay">
+    <p class="overlay-heading">Select Data To Add</p>
+
+    <button onclick="overlayOff('data')" class="overlay-button" id="cancel-button">Cancel</button>
+    <button class="overlay-button" id="confirm-data">Confirm</button>
+
+    <form action="" id="data-form">
+        <input type="checkbox" name="data-sel" id="front-cam" value="front-cam" class="camera">
+        <label for="front-cam">Front Camera</label>
+
+        <br>
+
+        <input type="checkbox" name="data-sel" id="back-cam" value="back-cam"class="camera">
+        <label for="back-cam">Back Camera</label>
+
+        <br>
+
+        <input type="checkbox" name="data-sel" id="lidar-1" value="lidar-1">
+        <label for="lidar-1">LIDAR 1</label>
+
+        <br>
+
+        <input type="checkbox" name="data-sel" id="lidar-2" value="lidar-2">
+        <label for="lidar-2">LIDAR 2</label>
+
+        <br>
+
+        <input type="checkbox" name="data-sel" id="other-1" value="other-1">
+        <label for="other-1">Other 1</label>
+
+        <br>
+
+        <input type="checkbox" name="data-sel" id="other-2" value="other-2">
+        <label for="other-2">Other 2</label>
+    </form>
+
+</div>

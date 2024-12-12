@@ -1,0 +1,609 @@
+
+/* *********************** */
+/* General Overlay Styling */
+/* *********************** */
+
+.overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 850px;
+    height: 470px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #EDEDED;
+    z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
+    margin: auto;
+    border-radius: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.overlay-heading {
+    color: white;
+    font-size: 40px;
+    margin: 0px;
+    background-color: #898989;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    height: 91px;
+    line-height: 91px;
+    padding-left: 16px;
+    width: 834px;
+}
+
+.overlay-button {
+    position: absolute;
+    padding: 8px;
+    font-size: 36px;
+    margin: 8px;
+    bottom: 16px;
+    border-radius: 15px;
+    width: 170px;
+    height: 81px;
+    color: white;
+    background-color: #898989; 
+}
+
+.overlay-button:hover {
+    background-color: #767575;
+}
+
+#shutdown-button {
+    background-color: #BC3F3F;
+    right: 0;
+    font-size: 24px;
+}
+
+#shutdown-button:hover {
+    background-color: #923030;
+}
+
+#confirm-data, #confirm-vehicle {
+    right: 0;
+}
+
+form {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+/* ************************ */
+/* Shutdown Overlay Styling */
+/* ************************ */
+
+.shutdown-msg {
+    font-size: 32px;
+    color: #5B514D;
+    padding: 18px;
+    margin: 4px;
+}
+
+/* *************************** */
+/* Add Vehicle Overlay Styling */
+/* *************************** */
+
+input[type=text] {
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding: 8px;
+}
+
+label {
+    margin-left: 36px;
+    font-size: 24px;
+    color: #5B514D;
+}
+
+/* ************************ */
+/* Add Data Overlay Styling */
+/* ************************ */
+
+input[type=checkbox] {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 10px;
+}
+
+#data-form > label {
+    margin-left: 0px;
+}
+
+
+
+/* ************** */
+/* Footer Styling */
+/* ************** */
+
+.footer {
+    background-color: #EDEDED;
+    color: maroon;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 50px;
+    text-align: right;
+    align-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 999;
+}
+.footer img {
+    height: 40px;
+    margin-right: 20px;
+}
+
+/* ************** */
+/* Header Styling */
+/* ************** */
+
+.header {
+    background-color: #EDEDED;
+    color: maroon;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    padding-left: 0 10px; 
+    z-index: 20;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    z-index: 20;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 20;
+}
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    /* cursor: pointer; */
+}
+
+
+
+/* ***************************** */
+/* Menu Icon (hamburger) Styling */
+/* ***************************** */
+
+.menu-icon-container {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-radius: 8px;
+  background-color: #898989;
+}
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+.change .bar2 {
+    opacity: 0;
+}
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+
+/* ********************* */
+/* Menu Dropdown Styling */
+/* ********************* */
+
+.menu-dropdown {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-right: 10px;
+  }
+.menu-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 120px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    top: 100%;
+    margin-top: 9px;
+    z-index: 9999;
+}
+.menu-dropdown-content a {
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    
+}
+.menu-dropdown-content a:hover {background-color: #ddd}
+.show {display: block;}
+
+
+
+
+/* ***************** */
+/* Home Page Styling */
+/* ***************** */
+.main-body {
+    display: flex;
+    height: calc(100vh - 90px); /* Full screen height minus header/footer height */
+    overflow: hidden;
+}
+
+.data-section {
+    flex: 2;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.tab-section{
+    position: absolute;
+    z-index: 2;
+    width: 2.5%;
+    max-width: 40px;
+    height: 70%;
+    flex: 0.25;
+    padding: 0px, 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    flex-direction: column;
+    display: flex;
+    overflow: hidden;
+    background-color: none;
+    justify-content: center;
+    align-items: left;
+}
+
+.tab{
+    flex-grow: 0.2;
+    flex-shrink: 1;
+    padding: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 0px 2.5vh 2.5vh 0px;
+    border: none;
+    flex-direction: column;
+    display: flex;
+    overflow: hidden;
+    background-color: #c9c9c9;
+    justify-content: center;
+    align-items: center;
+    writing-mode:vertical-rl;
+}
+
+.open {
+    background-color: #fcfcfc;
+}
+
+.tab:hover {
+    background-color: #efefef;
+}
+
+.console-container{
+    position: absolute;
+    z-index: 2;
+    width: 70%;
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    pointer-events: none;
+}
+
+.rosconsole{
+    padding: 0px 10px 10px 10px;
+    height: 70%;
+    width: 80%;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 35px, 35px, 35px, 0px;
+    font-size: 10px;
+    cursor: pointer;
+    overflow-y: auto;
+    
+    max-height: 10%;
+    transition: max-height ease 0.2s;
+    text-align: left;
+    vertical-align: top;
+    display: flex;
+    flex-direction: column;
+    pointer-events: all;
+    z-index: 9999;
+}
+
+.active, .rosconsole:hover {
+    background-color: #fefefe;
+}
+
+
+.rosconsole::before {
+    content: '▲';
+    color: rgb(29, 29, 29);
+    font-weight: bold;
+    float: right;
+    margin-right: 5px;
+    margin-top: 15px;
+}
+  
+.active::before {
+    content: '▼';
+}
+
+
+.map-section {
+    flex: 5;
+    flex-direction: row;
+    justify-content: space-between;
+    /* temporary static image set as background image */
+    /*background-image: url(assets/images/map.png); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;*/
+
+}
+
+.map {
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+
+
+/* data section - not finished */
+.data-feed-container {
+    flex-grow: 1;
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    min-height: 500px;
+}
+
+.data-feed-home {
+    padding-top: 50%;
+    width: 100% - 1px; /*account for border*/
+    background-color: #fff;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 3px;
+}
+
+#add-data-homeButton {
+    font-size: 21px;
+    color: white;
+    width: flex;
+    height: auto;
+    max-height: 50px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+
+
+/* ****************************** */
+/* Data View Page Styling */
+/* ****************************** */
+
+#add-data-button {
+    font-size: 25px;
+    color: white;
+}
+
+.data-view-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: auto; /* Enable vertical scrolling */
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    flex-grow: 1;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: auto;
+}
+
+.data-feed-dataView {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    color: #333;
+    align-items: flex-end;
+}
+
+
+
+/* ****************************** */
+/* Vehicle Management Page Styling */
+/* ****************************** */
+
+#add-vehicle-button {
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 8px;
+    z-index: 12;
+}
+
+#add-vehicle-button:hover {
+    background-color: #656565;
+}
+
+.vehicle-info-container {
+    flex-grow: 1;
+    position: relative;
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    top: 50px;
+    box-sizing: border-box;
+}
+
+.vehicle-info {
+    border: 3px solid maroon;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    min-height: 400px;
+    max-width: 100%;
+}
+
+
+
+/* ****************************** */
+/* Vehicle Control Button Styling */
+/* ****************************** */
+
+.vehicle-control-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    margin-left: 0 auto;
+}
+.control-button {
+    background-color: #898989;
+    border: 1px solid #898989;
+    border-radius: 12px;
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 60px;
+    height: 50px;
+}
+.control-button:first-child:hover {
+    background-color: #923030;
+}
+.control-button:last-child {
+    flex: 3;
+    height: 50px;
+}
+.control-button:hover {
+    background-color: #656565;
+}
+.control-button-icon {
+    height: 40px;
+    transition: opacity 0.2s ease;
+}
+
+
+
+/* ************** */
+/* Topics Styling */
+/* ************** */
+
+.topic-list-container {
+    padding: 0px 10px 10px 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-left: 0 auto;
+}
+.topic-list-container h2 {
+    margin: 8px;
+    font-size: 1rem;
+    color: #333;
+}
+.topic-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.topic-name {
+    font-size: 0.75rem;
+    font-weight: bold;
+    flex: 1;
+}
+.topic-right {
+    display: flex;
+    align-items: center;
+}
+.topic-rate {
+    font-size: 0.75rem;
+    color: #666;
+}
+.topic-status {
+    width: 20px;
+    height: 20px;
+    border-radius: 25%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
