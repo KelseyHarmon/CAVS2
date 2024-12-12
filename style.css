@@ -383,7 +383,7 @@ input[type=checkbox] {
     margin-top: 10px;
     margin-bottom: 10px;
     height: auto;
-    min-height: 500px;
+    /* min-height: 500px; */
 }
 
 .data-feed-home {
