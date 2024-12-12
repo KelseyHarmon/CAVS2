@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,6 +27,7 @@
                 
                 <!-- vehicle control button container -->
                 <div class="vehicle-control-button-container">
+
                     <!-- Shutdown Button -->
                     <button class="control-button" onclick="overlayOn('shutdown')">
                       <img src="assets/images/shutdown.png" class="control-button-icon">
@@ -46,32 +48,15 @@
                     <h2>Ros Topics Publishing</h2>
                     <!-- pulling arbitrary list from script.js right now -->
                     <div id="topic-list">
-
+                        
                     </div>
                 </div>
 
                 <!-- container for different data feeds -->
-                <div class="data-feed-container">
-                    <div class="data-feed">
-                        <p style="text-align: center;">camera 1</p>
-                    </div>
-                    <div class="data-feed">
-                        <p style="text-align: center;">camera 2</p>
-                    </div>
-                    <div class="data-feed">
-                        <p style="text-align: center;">lidar 1</p>
-                    </div>
-                    <div class="data-feed">
-                        <p style="text-align: center;">point cloud</p>
-                    </div>
+                <div class="data-feed-container"></div>
 
-                    
-                    <!-- temporary overlay window tests -->
-                    <h3>Temp Overlay Window Tests</h3>
-                    <button onclick="overlayOn('shutdown')">Shut down</button>
-                    <button onclick="overlayOn('vehicle')">Add Vehicle</button>
-                    <button onclick="overlayOn('data')">Add Data</button>     
-                </div>
+                <!-- Add Data Button -->
+                <button id="add-data-homeButton" class="control-button" onclick="overlayOn('data')">Add Data</button>
 
                  
             </div>
@@ -98,7 +83,7 @@
             </div>
 
         </div>
-          
 
     </body>
 </html>
+

@@ -1,3 +1,4 @@
+
 // *********************************
 // ****** Loading  Components ******
 // *********************************
@@ -8,6 +9,7 @@ function loadComponent(id, file) {
         .then(response => response.text())
         .then(data => {
             document.getElementById(id).innerHTML = data;
+
         })
         .catch(error => console.error('Error loading component:', error));
 }
@@ -19,7 +21,11 @@ loadComponent('shutdown_menu', 'components/overlays/shutdown_menu.html');
 loadComponent('new_vehicle_menu', 'components/overlays/new_vehicle_menu.html');
 loadComponent('add_data_menu', 'components/overlays/add_data_menu.html');
 
-
+document.addEventListener('click', (event) => {
+    if (event.target && event.target.id === 'confirm-data'){
+        populateDataFeeds();
+    }
+});
 
 // *********************************
 // ***** Overlay Functionality *****
@@ -103,6 +109,72 @@ function togglePlayPause() {
         icon.style.opacity = 1; // Fade in the new icon
     }, 200); // Duration matches the CSS transition
 }
+
+
+// ***************************************
+// ***** Add Data Feed Functionality *****
+// ***************************************
+
+function populateDataFeeds() {
+
+    const currentPage = window.location.pathname;
+
+    let targetContainer;
+
+    // if-statements to figure out which page the user is clicking 'add data' button on
+    if (currentPage == '/home.html'){
+        targetContainer = document.querySelector('.data-feed-container');
+    }
+
+    else if (currentPage == '/data_view.html'){
+        targetContainer = document.querySelector('.data-view-container');
+    }
+
+
+
+    // clears existing data feeds 
+    targetContainer.innerHTML = "";
+
+    // gets the chosen checkboxes
+    const checkboxes = document.querySelectorAll('#data-form input[type="checkbox"]:checked');
+
+    // cretaes and appends the data feed topic divs
+    checkboxes.forEach((checkbox) => {
+        const dataFeed = document.createElement('div');
+        dataFeed.className = 'data-feed';
+
+        if (currentPage == '/home.html'){
+            dataFeed.classList.add('data-feed-home');
+        }
+        else{
+            dataFeed.classList.add('data-feed-dataView');
+        }
+
+        dataFeed.textContent = checkbox.value;
+        targetContainer.appendChild(dataFeed);
+    });
+
+    // closes overlay after populating data feeds
+    const overlay = document.getElementById('add-data-overlay');
+    if (overlay){
+        overlay.style.display = 'none';
+    }
+
+}
+
+// event listener for 'confirm' button
+document.getElementById('confirm-data').addEventListener('click', populateDataFeeds);
+
+// event listener for 'add data' button
+document.getElementById('add-data-homeButton').addEventListener('click', () => {
+    overlayOn('data');
+});
+
+// event listener for 'add data' button
+document.getElementById('add-data-button').addEventListener('click', () => {
+    overlayOn('data');
+});
+
 
 
 // ***********************************

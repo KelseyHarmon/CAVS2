@@ -1,3 +1,4 @@
+
 /* *********************** */
 /* General Overlay Styling */
 /* *********************** */
@@ -29,6 +30,7 @@
     height: 91px;
     line-height: 91px;
     padding-left: 16px;
+    width: 834px;
 }
 
 .overlay-button {
@@ -129,6 +131,7 @@ input[type=checkbox] {
     text-align: right;
     align-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    z-index: 999;
 }
 .footer img {
     height: 40px;
@@ -172,6 +175,7 @@ input[type=checkbox] {
     height: 30px;
     /* cursor: pointer; */
 }
+
 
 
 /* ***************************** */
@@ -224,11 +228,10 @@ input[type=checkbox] {
     min-width: 120px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
     right: 0;
     top: 100%;
     margin-top: 9px;
-
+    z-index: 9999;
 }
 .menu-dropdown-content a {
     color: black;
@@ -255,10 +258,11 @@ input[type=checkbox] {
 
 .data-section {
     flex: 2;
-    padding: 20px;
+    padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     flex-direction: column;
     display: flex;
+    justify-content: space-between;
     overflow: hidden;
 }
 
@@ -374,15 +378,126 @@ input[type=checkbox] {
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-top: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    min-height: 500px;
 }
 
-.data-feed {
+.data-feed-home {
     padding-top: 50%;
-    width: 100% - 2px; /*account for border*/
+    width: 100% - 1px; /*account for border*/
     background-color: #fff;
     border-radius: 25px;
     border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 3px;
 }
+
+#add-data-homeButton {
+    font-size: 21px;
+    color: white;
+    width: flex;
+    height: auto;
+    max-height: 50px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+
+
+/* ****************************** */
+/* Data View Page Styling */
+/* ****************************** */
+
+#add-data-button {
+    font-size: 25px;
+    color: white;
+}
+
+.data-view-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: auto; /* Enable vertical scrolling */
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    flex-grow: 1;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: auto;
+}
+
+.data-feed-dataView {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    color: #333;
+    align-items: flex-end;
+}
+
+
+
+/* ****************************** */
+/* Vehicle Management Page Styling */
+/* ****************************** */
+
+#add-vehicle-button {
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    padding: 15px 32px;
+    text-align: center;
+    border-radius: 8px;
+    z-index: 12;
+}
+
+#add-vehicle-button:hover {
+    background-color: #656565;
+}
+
+.vehicle-info-container {
+    flex-grow: 1;
+    position: relative;
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    top: 50px;
+    box-sizing: border-box;
+}
+
+.vehicle-info {
+    border: 3px solid maroon;
+    padding: 10px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    min-height: 400px;
+    max-width: 100%;
+}
+
 
 
 /* ****************************** */
@@ -395,6 +510,7 @@ input[type=checkbox] {
     align-items: center;
     gap: 15px;
     padding: 10px;
+    margin-left: 0 auto;
 }
 .control-button {
     background-color: #898989;
@@ -436,6 +552,7 @@ input[type=checkbox] {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 8px;
+    margin-left: 0 auto;
 }
 .topic-list-container h2 {
     margin: 8px;
